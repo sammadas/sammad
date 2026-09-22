@@ -1,0 +1,198 @@
+:root{
+  --bg:#080a16;
+  --bg2:#0d1022;
+  --card:rgba(255,255,255,.065);
+  --border:rgba(255,255,255,.13);
+  --text:#f7f7ff;
+  --muted:#b8bad0;
+  --pink:#ff4ecd;
+  --purple:#8b5cf6;
+  --cyan:#28d7ff;
+  --green:#43f2b1;
+  --shadow:0 25px 80px rgba(0,0,0,.35);
+}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+html{overflow-x:hidden}
+body{
+  font-family:"Hind Siliguri","Poppins",sans-serif;
+  color:var(--text);background:
+  radial-gradient(circle at 15% 10%,rgba(139,92,246,.18),transparent 28%),
+  radial-gradient(circle at 85% 20%,rgba(40,215,255,.13),transparent 28%),
+  var(--bg);
+  line-height:1.7;overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.25;z-index:-1;
+  background-image:radial-gradient(rgba(255,255,255,.7) .6px,transparent .6px);
+  background-size:32px 32px;
+}
+a{text-decoration:none;color:inherit}
+.navbar{
+  position:fixed;top:0;left:0;right:0;height:78px;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;padding:0 7%;
+  background:rgba(8,10,22,.62);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)
+}
+.logo{font:800 27px "Poppins";letter-spacing:-2px}
+.logo span{color:var(--pink)}
+nav{display:flex;gap:30px}
+nav a{font-weight:600;color:#d5d6e7;position:relative;transition:.3s}
+nav a:hover,nav a.active{color:white}
+nav a:after{content:"";position:absolute;height:2px;width:0;left:0;bottom:-8px;background:linear-gradient(90deg,var(--pink),var(--cyan));transition:.3s}
+nav a:hover:after,nav a.active:after{width:100%}
+.menu-btn{display:none;background:none;border:0;color:white;font-size:28px;cursor:pointer}
+.section{padding:110px 8%;position:relative}
+.hero{min-height:100vh;padding-top:150px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:40px}
+.hero-content{max-width:760px}
+.hello-badge{
+  display:inline-block;padding:7px 15px;border:1px solid var(--border);border-radius:50px;
+  background:rgba(255,255,255,.045);color:#ddd;font-size:14px;margin-bottom:18px
+}
+.eyebrow{font:700 13px "Poppins";letter-spacing:4px;color:var(--cyan);margin-bottom:8px}
+.hero h1{font:800 clamp(55px,8vw,105px)/1 "Poppins";letter-spacing:-5px;margin:5px 0 15px}
+.hero h1 span,.section-heading h2 span,.goal-content h2 span{background:linear-gradient(90deg,var(--pink),var(--purple),var(--cyan));-webkit-background-clip:text;color:transparent}
+.hero h2{font:600 clamp(20px,3vw,31px) "Poppins";color:#e6e6f4}
+.hero h2 b{color:var(--pink);padding:0 8px}
+.hero-text{color:var(--muted);font-size:18px;max-width:680px;margin:22px 0 30px}
+.hero-buttons{display:flex;gap:14px;flex-wrap:wrap}
+.btn{padding:12px 22px;border-radius:13px;font-weight:700;border:1px solid var(--border);transition:.3s}
+.btn.primary{background:linear-gradient(100deg,var(--pink),var(--purple));box-shadow:0 10px 35px rgba(255,78,205,.25)}
+.btn.secondary{background:rgba(255,255,255,.05)}
+.btn:hover{transform:translateY(-4px);box-shadow:0 15px 35px rgba(0,0,0,.3)}
+.social-mini{display:flex;gap:10px;margin-top:25px}
+.social-mini a{
+  width:40px;height:40px;border:1px solid var(--border);border-radius:50%;
+  display:grid;place-items:center;font:600 15px "Poppins";transition:.3s;background:rgba(255,255,255,.04)
+}
+.social-mini a:hover{background:linear-gradient(135deg,var(--pink),var(--purple));transform:translateY(-4px)}
+.hero-card-wrap{min-height:480px;display:grid;place-items:center;position:relative}
+.profile-card{
+  width:min(340px,85%);height:400px;border:1px solid var(--border);border-radius:35px;
+  background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.025));
+  box-shadow:var(--shadow);backdrop-filter:blur(18px);display:flex;align-items:center;
+  justify-content:flex-end;flex-direction:column;padding:30px;position:relative;overflow:hidden;
+  animation:float 5s ease-in-out infinite;
+}
+.profile-card:before{
+  content:"";position:absolute;width:220px;height:220px;border-radius:50%;top:-70px;right:-70px;
+  background:var(--purple);filter:blur(20px);opacity:.5
+}
+.profile-card:after{
+  content:"";position:absolute;width:180px;height:180px;border-radius:50%;left:-70px;bottom:40px;
+  background:var(--cyan);filter:blur(35px);opacity:.28
+}
+.profile-avatar{
+  width:190px;height:190px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--pink),var(--purple),var(--cyan));
+  box-shadow:0 0 60px rgba(139,92,246,.45);font:800 55px "Poppins";z-index:2;
+  border:7px solid rgba(255,255,255,.13)
+}
+.profile-info{text-align:center;z-index:2;margin-top:22px;display:flex;flex-direction:column}
+.profile-info strong{font:700 25px "Poppins"}
+.profile-info span{color:var(--muted);font-size:14px}
+.floating-tag{
+  position:absolute;padding:9px 14px;border:1px solid var(--border);background:rgba(10,12,27,.75);
+  backdrop-filter:blur(12px);border-radius:12px;font-size:13px;z-index:4;box-shadow:var(--shadow)
+}
+.tag-one{left:-10px;top:95px}.tag-two{right:-15px;bottom:100px}
+.orbit{position:absolute;border:1px dashed rgba(255,255,255,.15);border-radius:50%;animation:spin 18s linear infinite}
+.orbit-one{width:430px;height:430px}.orbit-two{width:500px;height:500px;animation-direction:reverse;animation-duration:24s}
+.hero-glow{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
+.glow-one{width:300px;height:300px;background:rgba(255,78,205,.15);left:-120px;top:20%}
+.glow-two{width:350px;height:350px;background:rgba(40,215,255,.12);right:-150px;bottom:0}
+.section-heading{text-align:center;max-width:720px;margin:0 auto 55px}
+.section-heading h2{font:800 clamp(38px,5vw,62px)/1.2 "Poppins";letter-spacing:-2px}
+.section-heading>p:last-child{color:var(--muted);margin-top:10px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:stretch}
+.glass{background:var(--card);border:1px solid var(--border);backdrop-filter:blur(18px);box-shadow:var(--shadow)}
+.about-text{padding:45px;border-radius:28px;position:relative;overflow:hidden}
+.about-text:after{content:"";position:absolute;width:200px;height:200px;background:var(--purple);filter:blur(90px);opacity:.18;right:-100px;bottom:-100px}
+.quote-mark{font:800 90px Georgia;color:var(--pink);height:65px;opacity:.7}
+.about-text p{font-size:17px;color:var(--muted);margin:15px 0}
+.about-text strong{color:white}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.info-card{padding:22px;border-radius:22px;display:flex;gap:15px;align-items:flex-start;transition:.3s}
+.info-card:hover,.skill-card:hover,.contact-card:hover{transform:translateY(-7px);border-color:rgba(255,255,255,.25)}
+.info-card .icon{font-size:27px}
+.info-card small,.contact-card small{display:block;color:#999bb5;font-size:12px}
+.info-card strong{display:block;font-size:15px;margin-top:3px}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.skill-card{padding:32px;border-radius:26px;transition:.35s;position:relative;overflow:hidden}
+.skill-card:after{content:"";position:absolute;width:130px;height:130px;right:-80px;top:-80px;background:var(--pink);filter:blur(55px);opacity:.22}
+.skill-icon{font-size:43px;margin-bottom:15px}
+.skill-card h3{font:700 23px "Poppins"}
+.skill-card p{color:var(--muted);margin:8px 0 20px}
+.skill-line{height:7px;background:rgba(255,255,255,.08);border-radius:10px;overflow:hidden}
+.skill-line span{display:block;height:100%;border-radius:10px;background:linear-gradient(90deg,var(--pink),var(--purple),var(--cyan))}
+.skill-card small{display:block;margin-top:8px;color:#aaaac0}
+.hobby-card{max-width:850px;margin:auto;padding:35px;border-radius:28px;display:flex;align-items:center;gap:30px}
+.hobby-icon{font-size:65px;width:115px;height:115px;border-radius:25px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(255,78,205,.2),rgba(40,215,255,.15))}
+.hobby-card h3{font:700 28px "Poppins"}
+.hobby-card p{color:var(--muted);margin-top:8px;font-size:17px}
+.goal-box{max-width:1100px;margin:auto;border-radius:35px;padding:60px;display:grid;grid-template-columns:1.5fr .7fr;align-items:center;overflow:hidden;position:relative;background:linear-gradient(120deg,rgba(139,92,246,.18),rgba(255,78,205,.08),rgba(40,215,255,.12));border:1px solid var(--border)}
+.goal-box:before{content:"";position:absolute;inset:-100px;background:conic-gradient(from 180deg,transparent,rgba(255,78,205,.13),transparent 35%);animation:spin 12s linear infinite}
+.goal-content,.goal-visual{position:relative;z-index:1}
+.goal-content h2{font:800 54px "Poppins";letter-spacing:-2px}
+.goal-content>p{color:var(--muted);font-size:18px;max-width:700px;margin:12px 0 20px}
+.goal-points{display:flex;gap:12px;flex-wrap:wrap}
+.goal-points span{padding:7px 13px;border-radius:30px;background:rgba(255,255,255,.06);border:1px solid var(--border);font-size:14px}
+.goal-visual{display:grid;place-items:center}
+.target-circle{width:210px;height:210px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(255,255,255,.18);background:radial-gradient(circle,rgba(255,78,205,.25),rgba(139,92,246,.08),transparent 70%);box-shadow:0 0 70px rgba(139,92,246,.22);font-size:70px;animation:pulse 3s infinite}
+.contact-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:15px}
+.contact-card{padding:23px 15px;border-radius:22px;display:flex;gap:12px;align-items:center;transition:.3s;min-width:0}
+.contact-icon{min-width:43px;height:43px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,var(--purple),var(--pink));font:700 15px "Poppins"}
+.contact-card strong{display:block;font-size:13px;word-break:break-word}
+footer{border-top:1px solid rgba(255,255,255,.08);padding:28px 8%;background:rgba(0,0,0,.15)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.footer-inner p{color:#888ba5;font-size:13px}
+.footer-social{display:flex;gap:18px;color:#a7a9bf;font-size:13px}
+.footer-social a:hover{color:white}
+.top-btn{position:fixed;right:25px;bottom:25px;width:45px;height:45px;border:1px solid var(--border);background:rgba(10,12,27,.8);backdrop-filter:blur(10px);color:white;border-radius:50%;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(15px);transition:.3s;z-index:999}
+.top-btn.show{opacity:1;visibility:visible;transform:translateY(0)}
+.loader{position:fixed;inset:0;background:var(--bg);z-index:9999;display:grid;place-items:center;align-content:center;gap:12px;transition:.6s}
+.loader.hide{opacity:0;visibility:hidden}
+.loader-ring{width:48px;height:48px;border:3px solid rgba(255,255,255,.1);border-top-color:var(--pink);border-right-color:var(--cyan);border-radius:50%;animation:spin .8s linear infinite}
+.loader p{color:#aaa;font-size:14px}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:none}
+@keyframes float{50%{transform:translateY(-14px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{50%{transform:scale(1.06);box-shadow:0 0 90px rgba(255,78,205,.28)}}
+@media(max-width:1050px){
+  .contact-grid{grid-template-columns:repeat(2,1fr)}
+  .hero{grid-template-columns:1fr}
+  .hero-content{text-align:center;margin:auto}
+  .hero-buttons,.social-mini{justify-content:center}
+  .hero-text{margin-left:auto;margin-right:auto}
+  .hero-card-wrap{min-height:450px}
+  .skills-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  .navbar{padding:0 5%;height:70px}
+  .menu-btn{display:block}
+  nav{position:absolute;top:70px;left:5%;right:5%;display:none;flex-direction:column;gap:0;padding:12px;border:1px solid var(--border);background:rgba(8,10,22,.95);backdrop-filter:blur(20px);border-radius:18px}
+  nav.open{display:flex}
+  nav a{padding:11px 14px}
+  .section{padding:85px 5%}
+  .hero{padding-top:125px}
+  .hero h1{letter-spacing:-3px}
+  .hero-card-wrap{min-height:390px}
+  .profile-card{height:350px}
+  .profile-avatar{width:160px;height:160px;font-size:45px}
+  .orbit-one{width:350px;height:350px}.orbit-two{width:400px;height:400px}
+  .tag-one{left:0}.tag-two{right:0}
+  .about-grid,.skills-grid,.goal-box{grid-template-columns:1fr}
+  .info-grid{grid-template-columns:1fr}
+  .goal-box{padding:35px}
+  .goal-content h2{font-size:43px}
+  .goal-visual{margin-top:20px}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column;text-align:center}
+  .footer-social{justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:450px){
+  .hero h1{font-size:54px}
+  .hero h2{font-size:18px}
+  .hero-text{font-size:16px}
+  .about-text{padding:28px}
+  .hobby-card{flex-direction:column;text-align:center;padding:28px}
+}
